@@ -3,7 +3,7 @@
 ![orbiter-thumb](https://github.com/user-attachments/assets/fec90ce2-9aa3-47eb-80b1-bce4a8bf853e)
 
 **Author:** The French Monkey (TFMSTYLE)  
-**Version:** 1.1.0  
+**Version:** 1.1.1  
 
 ---
 
@@ -74,3 +74,21 @@ Saves the current layout before entering fullscreen and restores it upon exit.
   - No object is selected  
   - The 3D Viewport area is not found  
   - The user presses `Esc`
+
+---
+
+## Install
+
+Needs Blender 4.2 or later. In Blender open Edit > Preferences > Get Extensions and search for Orbiter.
+
+To build the zip yourself, run this in the repo folder:
+
+```bash
+blender --command extension build
+```
+
+---
+
+## License
+
+GPL 3.0 or later. See [LICENSE](LICENSE).
