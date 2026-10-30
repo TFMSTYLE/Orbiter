@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "orbiter"
-version = "1.1.1"
+version = "1.1.2"
 name = "Orbiter"
 tagline = "Orbit around objects in the viewport"
 tags = ["3D View"]
@@ -13,5 +13,8 @@ blender_version_min = "4.2.0"
 
 website = "https://tfmstyle.com"
 
+[permissions]
+network = "Check for and download updates from Relay"
+
 [build]
-paths = ["__init__.py", "LICENSE"]
+paths = ["__init__.py", "relay_updater.py", "LICENSE"]

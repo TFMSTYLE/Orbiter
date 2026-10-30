@@ -4,7 +4,7 @@
 bl_info = {
     "name": "Orbiter",
     "author": "The French Monkey",
-    "version": (1, 1, 1),
+    "version": (1, 1, 2),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > Orbiter",
     "description": "Orbit around objects in the viewport",
@@ -19,6 +19,11 @@ from mathutils import Quaternion, Vector
 from bpy.types import PropertyGroup
 from bpy.props import FloatProperty, BoolProperty, StringProperty, CollectionProperty
 from bpy.app.handlers import persistent
+
+try:
+    from . import relay_updater
+except ImportError:  # the Addon Collection has its own updates
+    relay_updater = None
 
 # ------------------------------------------------------------------------
 # Constants
@@ -263,6 +268,8 @@ class VIEW3D_PT_orbiter(bpy.types.Panel):
     bl_category = "Orbiter"
 
     def draw(self, context):
+        if relay_updater:
+            relay_updater.draw(self.layout)
         layout = self.layout
         s = context.scene.orbiter_settings
         o = context.active_object
@@ -310,11 +317,15 @@ classes = (
 )
 
 def register():
+    if relay_updater:
+        relay_updater.register("blender-orbiter")
     for c in classes:
         bpy.utils.register_class(c)
     bpy.types.Scene.orbiter_settings = bpy.props.PointerProperty(type=OrbiterSettings)
 
 def unregister():
+    if relay_updater:
+        relay_updater.unregister()
     for c in reversed(classes):
         bpy.utils.unregister_class(c)
     if hasattr(bpy.types.Scene, 'orbiter_settings'):

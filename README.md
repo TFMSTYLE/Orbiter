@@ -3,7 +3,7 @@
 ![orbiter-thumb](https://github.com/user-attachments/assets/fec90ce2-9aa3-47eb-80b1-bce4a8bf853e)
 
 **Author:** The French Monkey (TFMSTYLE)  
-**Version:** 1.1.1  
+**Version:** 1.1.2  
 
 ---
 
