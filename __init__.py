@@ -4,7 +4,7 @@
 bl_info = {
     "name": "Orbiter",
     "author": "The French Monkey",
-    "version": (1, 1, 2),
+    "version": (1, 1, 3),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > Orbiter",
     "description": "Orbit around objects in the viewport",
